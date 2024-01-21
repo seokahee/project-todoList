@@ -5,9 +5,57 @@ import List from "./deleteList";
 function App() {
   // todoList
   const [lists, setLists] = useState([
-    { id: 1, title: "todoList", content: "과제를 해봅시다", isDone: false },
-    { id: 2, title: "todoList", content: "과제를 해봅시다", isDone: false },
-    { id: 3, title: "todoList", content: "과제를 해봅시다", isDone: false },
+    {
+      id: 1,
+      title: "todoList",
+      content: "과제를 해봅시다",
+      isDone: false,
+      regDate: (() => {
+        const now = new Date();
+        const today =
+          now.getFullYear() +
+          "년" +
+          (now.getMonth() + 1) +
+          "월" +
+          now.getDate() +
+          "일";
+        return today;
+      })(),
+    },
+    {
+      id: 2,
+      title: "todoList",
+      content: "과제를 해봅시다",
+      isDone: false,
+      regDate: (() => {
+        const now = new Date();
+        const today =
+          now.getFullYear() +
+          "년" +
+          (now.getMonth() + 1) +
+          "월" +
+          now.getDate() +
+          "일";
+        return today;
+      })(),
+    },
+    {
+      id: 3,
+      title: "todoList",
+      content: "과제를 해봅시다",
+      isDone: false,
+      regDate: (() => {
+        const now = new Date();
+        const today =
+          now.getFullYear() +
+          "년" +
+          (now.getMonth() + 1) +
+          "월" +
+          now.getDate() +
+          "일";
+        return today;
+      })(),
+    },
   ]);
 
   const [title, setTitle] = useState("");
@@ -31,6 +79,17 @@ function App() {
       title,
       content,
       isDone,
+      regDate: (() => {
+        const now = new Date();
+        const today =
+          now.getFullYear() +
+          "년" +
+          (now.getMonth() + 1) +
+          "월" +
+          now.getDate() +
+          "일";
+        return today;
+      })(),
     };
     // 유효성 검사
     if (title.length === 0 || content.length === 0) {

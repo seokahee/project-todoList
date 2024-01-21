@@ -3,6 +3,7 @@ const List = ({ item, removeBtn }) => {
     <div key={item.id} className="listDiv">
       <div>{item.title}</div>
       <div> {item.content}</div>
+      <div> {item.regDate}</div>
       <button onClick={() => removeBtn(item.id)}>삭제</button>
     </div>
   );
