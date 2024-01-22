@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+
 import TodoList from "./TodoList";
 import TodoAdd from "./TodoAdd";
 
@@ -62,11 +63,8 @@ function App() {
   return (
     <div className="todoList-container">
       <h1 className="todo-logo">Todo List</h1>
+    )
 
-      <TodoAdd setList={setList} list={list} />
-      <TodoList setList={setList} list={list} />
-    </div>
-  );
 }
 
 export default App;
