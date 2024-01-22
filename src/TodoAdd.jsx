@@ -8,7 +8,7 @@ const TodoAdd = ({ setList, list }) => {
   const titleEl = useRef(null);
   // id변수 기본값이 있기 때문에 4부터 시작한다
   const listId = useRef(4);
-  // 리액트는 가상돔인데, 직접적으로 돔을 지정할때(포커스, 스크롤이벤트같은경우) 사용되는 훅
+  // useRef :리액트는 가상돔이지만, 직접적으로 돔을 지정할때(포커스, 스크롤이벤트같은경우) 사용되는 훅
 
   const addTitle = (e) => {
     setTitle(e.target.value);
