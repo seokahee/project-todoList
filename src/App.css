@@ -1,9 +1,165 @@
-.header {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
-.contentDiv {
+.container {
+  width: 100%;
 }
-.contentInput {
+.logo {
+  width: 100%;
+  height: 8vh;
+  padding: 11px;
+  border: 1px solid #ffb5b5;
+  color: #ffb5b5;
+}
+.addDiv {
+  width: 100%;
+  height: 15vh;
+  background-color: #ffb5b5;
+  border-radius: 5px;
+  color: #ac1313;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+.todoInput {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  border-radius: 5px;
 }
 .addBtn {
+  width: 7%;
+  padding: 7px;
+  float: right;
+  background-color: #9b6551;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.addBtn:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: brown;
+  cursor: pointer;
+}
+.inputDiv {
+  width: 100vh;
+  display: flex;
+  gap: 5%;
+}
+.workingDiv {
+  width: 100%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.doneDiv {
+  width: 100%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.listDiv {
+  margin: 1% 1%;
+}
+.todoDiv {
+  width: 33vh;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 3px solid #a98787;
+  border-radius: 10px;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.btnDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.removeBtn {
+  width: 30%;
+  padding: 5px;
+  border-color: #e4252591;
+  border-radius: 5px;
+  background-color: white;
+  color: #f53838;
+  font-size: 15px;
+}
+.CompletedBtn {
+  width: 30%;
+  padding: 5px;
+  border-color: #8bc34a94;
+  border-radius: 5px;
+  background-color: white;
+  color: #8bc34a;
+  font-size: 15px;
+}
+.cancelBtn {
+  width: 30%;
+  padding: 5px;
+  border-color: #03a9f4b8;
+  border-radius: 5px;
+  background-color: white;
+  color: #03a9f4;
+  font-size: 15px;
+}
+.removeBtn:hover {
+  transform: scale(1.2);
+  background-color: #ff0000b5;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.CompletedBtn:hover {
+  transform: scale(1.2);
+  background-color: #8bc34a;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.cancelBtn:hover {
+  transform: scale(1.2);
+  background-color: #03a9f4b8;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.titleInput {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contentInput {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.labelText {
+  width: 10%;
+}
+.regDate {
+  font-size: 13px;
+  color: #a6a6a6;
+}
+.todoContent {
+  width: 100%;
+  padding: 0 5%;
+  line-height: 33px;
+  text-align: left;
 }
