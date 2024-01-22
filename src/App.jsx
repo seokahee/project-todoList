@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import "./App.css";
-import List from "./deleteList";
+// import List from "./List";s
 
 function App() {
   // todoList
-  const [lists, setLists] = useState([
+  const [list, setList] = useState([
     {
       id: 1,
       title: "todoList",
@@ -75,7 +75,7 @@ function App() {
   // 추가 이벤트
   const submitBtn = (e) => {
     const newList = {
-      id: lists.length + 1,
+      id: list.length + 1,
       title,
       content,
       isDone,
@@ -93,55 +93,103 @@ function App() {
     };
     // 유효성 검사
     if (title.length === 0 || content.length === 0) {
-      alert("제목이나 내용을 입력해 주세요");
+      alert("제목과  내용을 모두 입력해 주세요");
       return titleEl.current.focus();
     }
-    alert("등록이 완료되었습니다.");
-    setLists([...lists, newList]);
+    alert(`"${title}" 일정 등록이 완료되었습니다.`);
+    setList([...list, newList]);
     setTitle("");
     setContent("");
   };
 
   // 삭제 이벤트
-  const removeBtn = (id) => {
-    if (window.confirm("삭제하시겠습니까?")) {
-      alert("삭제가 완료되었습니다.");
-      const filteredList = lists.filter((list) => list.id !== id);
-      return setLists(filteredList);
+  const removeBtn = (id, title) => {
+    if (window.confirm(`"${title}" 일정을 삭제하시겠습니까?`)) {
+      alert(`"${title}" 일정이 삭제되었습니다.`);
+      const filteredList = list.filter((list) => list.id !== id);
+      return setList(filteredList);
     } else {
       alert("삭제가 취소되었습니다.");
       return;
     }
   };
 
+  // // 완료 리스트
+  // const completedBtn = (item) => {
+  //   // 필터를 이용하여 클릭 대상의 리스트와 리스트 목록의 id값이 같으며 isDone이 false인경우 isDone를 true로 변경하여
+  //   // 새로운 div에 이동시킬것, 취소를 누를경우 isDone을 다시 false로 변경
+
+  //   const completed =lists.map(item)=>{
+  //     if(item.id){
+
+  //     }
+  //   }
+  // };
+
   return (
     <div className="container">
       <h1 className="logo">Todo List</h1>
 
       <div className="addDiv">
-        <input
-          value={title}
-          ref={titleEl}
-          onChange={addTitle}
-          className="title"
-          id="title"
-          placeholder="제목을 입력하세요"
-        />
-        <textarea
-          value={content}
-          onChange={addContent}
-          className="content"
-          id="content"
-          placeholder="내용을 입력하세요"
-        />
+        <div className="inputDiv">
+          <div className="titleInput">
+            <label htmlFor="title" className="labelText">
+              제목
+            </label>
+            <input
+              value={title}
+              ref={titleEl}
+              onChange={addTitle}
+              className="todoInput"
+              id="title"
+              placeholder="제목을 입력하세요"
+              maxLength={10}
+            />
+          </div>
+          <div className="contentInput">
+            <label htmlFor="content" className="labelText">
+              내용
+            </label>
+            <input
+              value={content}
+              onChange={addContent}
+              className="todoInput"
+              id="content"
+              placeholder="내용을 입력하세요"
+            />
+          </div>
+        </div>
         <button className="addBtn" onClick={submitBtn}>
           추가하기
         </button>
       </div>
-      <div className="todoDiv">
-        {lists.map((item) => {
-          return <List key={item.id} item={item} removeBtn={removeBtn} />;
-        })}
+      <div className="listDiv">
+        <h1>🔥Working</h1>
+        <div className="workingDiv">
+          {list.map((item) => {
+            return (
+              <div key={item.id} className="todoDiv">
+                <div className="todoContent">
+                  <div className="title">{item.title}</div>
+                  <div className="content"> {item.content}</div>
+                  <div className="regDate"> 등록일 {item.regDate}</div>
+                  <div className="btnDiv">
+                    <button
+                      onClick={() => removeBtn(item.id, item.title)}
+                      className="removeBtn"
+                    >
+                      삭제
+                    </button>
+                    <button className="CompletedBtn">완료</button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <h1>🌈Done!</h1>
+        <div className="doneDiv"></div>
       </div>
     </div>
   );
