@@ -1,8 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Noto+Sans+KR&display=swap");
+.App {
+  font-family: "Gowun Dodum", sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+}
 * {
   margin: 0;
   box-sizing: border-box;
 }
-.container {
+.todoList-container {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -10,52 +16,152 @@
   align-items: center;
   background-color: #eee;
 }
-.logo {
+.todo-logo {
   width: 100%;
   height: 20vh;
   padding: 20px;
   text-align: center;
 }
-.addDiv {
-  width: 60%;
+.addList-div {
+  width: 100%;
+  height: 15vh;
+  background-color: #ffb5b5;
+  border-radius: 5px;
+  color: #940909;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+.todo-input {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  border-radius: 5px;
+}
+.addList-btn {
+  width: 7%;
+  padding: 7px;
+  float: right;
+  background-color: #9b6551;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.addList-btn:hover {
+  transform: scale(1.2);
+  background-color: white;
+  color: brown;
+  cursor: pointer;
+}
+.add-input-div {
+  width: 100vh;
+  display: flex;
+  gap: 5%;
+}
+.workingList-div {
+  width: 100%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.doneList-div {
+  width: 100%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.todo-list-div {
+  margin: 1% 1%;
+}
+.todo-div {
+  width: 33vh;
   height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  border: 3px solid #a98787;
+  border-radius: 10px;
+}
+.title-div {
+  font-size: 30px;
+  font-weight: bold;
+}
+.buttons-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.remove-btn {
+  width: 30%;
+  padding: 5px;
+  border-color: #e4252591;
   border-radius: 5px;
   background-color: white;
 }
-
-/* .contentInput {
-  width: 35%;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #eee;
-} */
-.contentLabel {
-  /* margin-left: 10%; */
-  font-size: 20px;
-}
-.addBtn {
-  width: 12%;
+.completed-btn {
+  width: 30%;
   padding: 5px;
   background-color: white;
   border: 3px solid #0091a3;
   border-radius: 15px;
   font-size: 18px;
 }
-
-.todoDiv {
-  padding: 100px;
+.cancel-btn {
+  width: 30%;
+  padding: 5px;
+  border-color: #03a9f4b8;
+  border-radius: 5px;
+  background-color: white;
+  color: #03a9f4;
+  font-size: 15px;
+}
+.remove-btn:hover {
+  transform: scale(1.2);
+  background-color: #ff0000b5;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.completed-btn:hover {
+  transform: scale(1.2);
+  background-color: #8bc34a;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.cancel-btn:hover {
+  transform: scale(1.2);
+  background-color: #03a9f4b8;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.title-input {
+  width: 100%;
   display: flex;
   gap: 12px;
 }
-.listDiv {
-  width: 500px;
-  height: 100px;
-  border: 1px solid green;
+.content-input {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.label-text {
+  width: 10%;
+}
+.regDate-div {
+  font-size: 13px;
+  color: #a6a6a6;
+}
+.todo-content-div {
+  width: 100%;
+  padding: 0 5%;
+  line-height: 33px;
+  text-align: left;
 }
