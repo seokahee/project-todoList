@@ -108,6 +108,15 @@
   color: #8bc34a;
   font-size: 15px;
 }
+.cancelBtn {
+  width: 30%;
+  padding: 5px;
+  border-color: #03a9f4b8;
+  border-radius: 5px;
+  background-color: white;
+  color: #03a9f4;
+  font-size: 15px;
+}
 .removeBtn:hover {
   transform: scale(1.2);
   background-color: #ff0000b5;
@@ -118,6 +127,13 @@
 .CompletedBtn:hover {
   transform: scale(1.2);
   background-color: #8bc34a;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.cancelBtn:hover {
+  transform: scale(1.2);
+  background-color: #03a9f4b8;
   border: none;
   color: white;
   cursor: pointer;

@@ -114,17 +114,16 @@ function App() {
     }
   };
 
-  // // 완료 리스트
-  // const completedBtn = (item) => {
-  //   // 필터를 이용하여 클릭 대상의 리스트와 리스트 목록의 id값이 같으며 isDone이 false인경우 isDone를 true로 변경하여
-  //   // 새로운 div에 이동시킬것, 취소를 누를경우 isDone을 다시 false로 변경
-
-  //   const completed =lists.map(item)=>{
-  //     if(item.id){
-
-  //     }
-  //   }
-  // };
+  // 완료 리스트
+  const completedBtn = (id) => {
+    const completedList = list.map((item) => {
+      if (item.id === id) {
+        item.isDone = !item.isDone;
+      }
+      return item;
+    });
+    setList(completedList);
+  };
 
   return (
     <div className="container">
@@ -166,30 +165,65 @@ function App() {
       <div className="listDiv">
         <h1>🔥Working</h1>
         <div className="workingDiv">
-          {list.map((item) => {
-            return (
-              <div key={item.id} className="todoDiv">
-                <div className="todoContent">
-                  <div className="title">{item.title}</div>
-                  <div className="content"> {item.content}</div>
-                  <div className="regDate"> 등록일 {item.regDate}</div>
-                  <div className="btnDiv">
-                    <button
-                      onClick={() => removeBtn(item.id, item.title)}
-                      className="removeBtn"
-                    >
-                      삭제
-                    </button>
-                    <button className="CompletedBtn">완료</button>
+          {list
+            .filter((item) => !item.isDone)
+            .map((item) => {
+              return (
+                <div key={item.id} className="todoDiv">
+                  <div className="todoContent">
+                    <div className="title">{item.title}</div>
+                    <div className="content"> {item.content}</div>
+                    <div className="regDate"> 등록일 {item.regDate}</div>
+                    <div className="btnDiv">
+                      <button
+                        onClick={() => removeBtn(item.id, item.title)}
+                        className="removeBtn"
+                      >
+                        삭제
+                      </button>
+                      <button
+                        onClick={() => completedBtn(item.id)}
+                        className="CompletedBtn"
+                      >
+                        완료
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
 
         <h1>🌈Done!</h1>
-        <div className="doneDiv"></div>
+        <div className="doneDiv">
+          {list
+            .filter((item) => item.isDone)
+            .map((item) => {
+              return (
+                <div key={item.id} className="todoDiv">
+                  <div className="todoContent">
+                    <div className="title">{item.title}</div>
+                    <div className="content"> {item.content}</div>
+                    <div className="regDate"> 등록일 {item.regDate}</div>
+                    <div className="btnDiv">
+                      <button
+                        onClick={() => removeBtn(item.id, item.title)}
+                        className="removeBtn"
+                      >
+                        삭제
+                      </button>
+                      <button
+                        onClick={() => completedBtn(item.id)}
+                        className="cancelBtn"
+                      >
+                        취소
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
       </div>
     </div>
   );
