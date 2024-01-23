@@ -7,10 +7,9 @@ const TodoList = ({ list, setList }) => {
       alert(`"${title}" 일정이 삭제되었습니다.`);
       const filteredList = list.filter((list) => list.id !== id);
       return setList(filteredList);
-    } else {
-      alert("삭제가 취소되었습니다.");
-      return;
     }
+    alert("삭제가 취소되었습니다.");
+    return;
   };
 
   // 완료 리스트
@@ -19,7 +18,6 @@ const TodoList = ({ list, setList }) => {
       if (item.id === id) {
         item.isDone = !item.isDone;
       }
-
       return item;
     });
     setList(completedList);

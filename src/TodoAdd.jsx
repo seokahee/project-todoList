@@ -43,7 +43,6 @@ const TodoAdd = ({ setList, list }) => {
       return titleEl.current.focus();
     }
     alert(`"${title}" 일정 등록이 완료되었습니다.`);
-    console.log("추가 이벤트 id", newList.id);
     setList([...list, newList]);
     listId.current++;
     setTitle("");
