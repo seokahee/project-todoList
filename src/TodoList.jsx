@@ -1,3 +1,5 @@
+import TodoItem from "./TodoItem";
+
 const TodoList = ({ list, setList }) => {
   // 삭제 이벤트
   const removeBtn = (id, title) => {
@@ -27,31 +29,17 @@ const TodoList = ({ list, setList }) => {
     <div className="todo-list-div">
       <h1>🔥Working</h1>
       <div className="workingList-div">
+        {/* isDone의 상태에 따라 todo가 반환된다. */}
         {list
           .filter((item) => !item.isDone)
           .map((item) => {
             return (
-              <div key={item.id} className="todo-div">
-                <div className="todo-content-div">
-                  <div className="title-div">{item.title}</div>
-                  <div className="content-div"> {item.content}</div>
-                  <div className="regDate-div"> 등록일 {item.regDate}</div>
-                  <div className="buttons-div">
-                    <button
-                      onClick={() => removeBtn(item.id, item.title)}
-                      className="remove-btn"
-                    >
-                      삭제
-                    </button>
-                    <button
-                      onClick={() => completedBtn(item.id)}
-                      className="completed-btn"
-                    >
-                      완료
-                    </button>
-                  </div>
-                </div>
-              </div>
+              // 필터링된 div 컴포넌트와 연결
+              <TodoItem
+                item={item}
+                removeBtn={removeBtn}
+                completedBtn={completedBtn}
+              />
             );
           })}
       </div>
@@ -63,27 +51,12 @@ const TodoList = ({ list, setList }) => {
           })
           .map(function (item) {
             return (
-              <div key={item.id} className="todo-div">
-                <div className="todo-content-div">
-                  <div className="title-div">{item.title}</div>
-                  <div className="content-div"> {item.content}</div>
-                  <div className="regDate-div"> 등록일 {item.regDate}</div>
-                  <div className="buttons-div">
-                    <button
-                      onClick={() => removeBtn(item.id, item.title)}
-                      className="remove-btn"
-                    >
-                      삭제
-                    </button>
-                    <button
-                      onClick={() => completedBtn(item.id)}
-                      className="cancel-btn"
-                    >
-                      취소
-                    </button>
-                  </div>
-                </div>
-              </div>
+              // 필터링된 div 컴포넌트와 연결
+              <TodoItem
+                item={item}
+                removeBtn={removeBtn}
+                completedBtn={completedBtn}
+              />
             );
           })}
       </div>
