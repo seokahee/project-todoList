@@ -39,7 +39,7 @@ const TodoAdd = ({ setList, list }) => {
 
     // 유효성 검사
     if (title.length === 0 || content.length === 0) {
-      alert("제목과  내용을 모두 입력해 주세요");
+      alert("제목과 내용을 모두 입력해 주세요");
       return titleEl.current.focus();
     }
     alert(`"${title}" 일정 등록이 완료되었습니다.`);

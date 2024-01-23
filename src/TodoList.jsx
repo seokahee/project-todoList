@@ -1,7 +1,6 @@
-const List = ({ list, setList }) => {
+const TodoList = ({ list, setList }) => {
   // 삭제 이벤트
   const removeBtn = (id, title) => {
-    console.log("삭제 이벤트 id", id);
     if (window.confirm(`"${title}" 일정을 삭제하시겠습니까?`)) {
       alert(`"${title}" 일정이 삭제되었습니다.`);
       const filteredList = list.filter((list) => list.id !== id);
@@ -14,8 +13,6 @@ const List = ({ list, setList }) => {
 
   // 완료 리스트
   const completedBtn = (id) => {
-    console.log("완료 이벤트 id", id);
-
     const completedList = list.map((item) => {
       if (item.id === id) {
         item.isDone = !item.isDone;
@@ -93,6 +90,4 @@ const List = ({ list, setList }) => {
     </div>
   );
 };
-export default List;
-
-//d 인덱스 꼬임 해결
+export default TodoList;
