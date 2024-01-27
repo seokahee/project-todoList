@@ -26,7 +26,7 @@ const TodoList = ({ list, setList }) => {
   return (
     <div className="todo-list-div">
       <h1>🔥Working</h1>
-      <div className="workingList-div">
+      <div className="list-div">
         {/* isDone의 상태에 따라 todo가 반환된다. */}
         {list
           .filter((item) => !item.isDone)
@@ -42,7 +42,7 @@ const TodoList = ({ list, setList }) => {
           })}
       </div>
       <h1>🌈Done!</h1>
-      <div className="doneList-div">
+      <div className="list-div">
         {list
           .filter(function (item) {
             return item.isDone;

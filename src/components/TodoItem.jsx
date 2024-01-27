@@ -6,31 +6,28 @@ const TodoItem = function ({ item, removeBtn, completedBtn }) {
         <div className="title-div">{item.title}</div>
         <div className="content-div"> {item.content}</div>
         <div className="deadline-div"> {item.deadline}</div>
-        <div className="buttons-div">
-          <button
-            onClick={() => removeBtn(item.id, item.title)}
-            className="remove-btn"
-          >
-            삭제
-          </button>
+      </div>
+      <div className="buttons-div">
+        <button
+          onClick={() => removeBtn(item.id, item.title)}
+          className="remove-btn"
+        >
+          삭제
+        </button>
 
-          {/** 삼항연산자를 이용해 isDone 상태에 따라 버튼이 보인다.  */}
-          {item.isDone ? (
-            <button
-              onClick={() => completedBtn(item.id)}
-              className="cancel-btn"
-            >
-              취소
-            </button>
-          ) : (
-            <button
-              onClick={() => completedBtn(item.id)}
-              className="completed-btn"
-            >
-              완료
-            </button>
-          )}
-        </div>
+        {/** 삼항연산자를 이용해 isDone 상태에 따라 버튼이 보인다.  */}
+        {item.isDone ? (
+          <button onClick={() => completedBtn(item.id)} className="cancel-btn">
+            취소
+          </button>
+        ) : (
+          <button
+            onClick={() => completedBtn(item.id)}
+            className="completed-btn"
+          >
+            완료
+          </button>
+        )}
       </div>
     </div>
   );
