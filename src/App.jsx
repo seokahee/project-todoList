@@ -8,54 +8,24 @@ function App() {
   const [list, setList] = useState([
     {
       id: 1,
-      title: "todoList-1",
+      title: "베이직 과제",
       content: "과제 테스트_1",
       isDone: false,
-      regDate: (() => {
-        const now = new Date();
-        const today =
-          now.getFullYear() +
-          "년" +
-          (now.getMonth() + 1) +
-          "월" +
-          now.getDate() +
-          "일";
-        return today;
-      })(),
+      deadline: "2024-01-29",
     },
     {
       id: 2,
       title: "todoList-2",
       content: "과제 테스트_2",
       isDone: false,
-      regDate: (() => {
-        const now = new Date();
-        const today =
-          now.getFullYear() +
-          "년" +
-          (now.getMonth() + 1) +
-          "월" +
-          now.getDate() +
-          "일";
-        return today;
-      })(),
+      deadline: "2024-01-29",
     },
     {
       id: 3,
       title: "todoList-3",
       content: "과제 테스트_3",
       isDone: false,
-      regDate: (() => {
-        const now = new Date();
-        const today =
-          now.getFullYear() +
-          "년" +
-          (now.getMonth() + 1) +
-          "월" +
-          now.getDate() +
-          "일";
-        return today;
-      })(),
+      deadline: "2024-01-29",
     },
   ]);
 
