@@ -11,21 +11,21 @@ function App() {
       title: "베이직 과제",
       content: "과제 테스트_1",
       isDone: false,
-      deadline: "2024-01-29",
+      deadline: "2024년 01월 29일",
     },
     {
       id: 2,
       title: "todoList-2",
       content: "과제 테스트_2",
       isDone: false,
-      deadline: "2024-01-29",
+      deadline: "2024년 01월 29일",
     },
     {
       id: 3,
       title: "todoList-3",
       content: "과제 테스트_3",
       isDone: false,
-      deadline: "2024-01-29",
+      deadline: "2024년 01월 29일",
     },
   ]);
 

@@ -17,6 +17,13 @@ const TodoAdd = ({ setList, list }) => {
   const addContent = (e) => {
     setContent(e.target.value);
   };
+  const inputDate = new Date(deadline);
+  const transformDate = inputDate.toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   const addDeadline = (e) => {
     setDeadline(e.target.value);
   };
@@ -27,7 +34,7 @@ const TodoAdd = ({ setList, list }) => {
       title,
       content,
       isDone: false,
-      deadline: deadline,
+      deadline: transformDate,
     };
 
     // 유효성 검사
@@ -47,6 +54,7 @@ const TodoAdd = ({ setList, list }) => {
     setList([...list, newList]);
     setTitle("");
     setContent("");
+    setDeadline("");
   };
   return (
     <div className="add-div">
