@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import TodoList from "./TodoList";
-import TodoAdd from "./TodoAdd";
+import TodoList from "./components/TodoList";
+import TodoAdd from "./components/TodoAdd";
 
 function App() {
   // todoList
@@ -31,7 +31,9 @@ function App() {
 
   return (
     <div className="todoList-container">
-      <h1 className="todo-logo">Todo List</h1>
+      <header>
+        <h1 className="todo-logo">Todo List</h1>
+      </header>
       <TodoAdd setList={setList} list={list} />
       <TodoList setList={setList} list={list} />
     </div>

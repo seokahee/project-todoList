@@ -3,12 +3,12 @@ import { useRef, useState } from "react";
 const TodoAdd = ({ setList, list }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [deadline, setDeadline] = useState("");
 
   // focus 이벤트 변수
   const titleEl = useRef(null);
-  // id변수 기본값이 있기 때문에 4부터 시작한다
-  const listId = useRef(4);
-  // useRef :리액트는 가상돔이지만, 직접적으로 돔을 지정할때(포커스, 스크롤이벤트같은경우) 사용되는 훅
+  const contentEl = useRef(null);
+  const deadlineEl = useRef(null);
 
   const addTitle = (e) => {
     setTitle(e.target.value);
@@ -17,42 +17,41 @@ const TodoAdd = ({ setList, list }) => {
   const addContent = (e) => {
     setContent(e.target.value);
   };
+  const addDeadline = (e) => {
+    setDeadline(e.target.value);
+  };
   // 추가 이벤트
   const submitBtn = (e) => {
     const newList = {
-      id: listId.current,
+      id: new Date(),
       title,
       content,
       isDone: false,
-      regDate: (() => {
-        const now = new Date();
-        const today =
-          now.getFullYear() +
-          "년" +
-          (now.getMonth() + 1) +
-          "월" +
-          now.getDate() +
-          "일";
-        return today;
-      })(),
+      deadline: deadline,
     };
 
     // 유효성 검사
-    if (title.length === 0 || content.length === 0) {
-      alert("제목과 내용을 모두 입력해 주세요");
+    if (title.length === 0) {
+      alert("제목을 입력해 주세요");
       return titleEl.current.focus();
+    }
+    if (content.length === 0) {
+      alert("내용을 입력해 주세요");
+      return contentEl.current.focus();
+    }
+    if (deadline.length === 0) {
+      alert("마감일을 입력해 주세요");
+      return deadlineEl.current.focus();
     }
     alert(`"${title}" 일정 등록이 완료되었습니다.`);
     setList([...list, newList]);
-    listId.current++;
     setTitle("");
     setContent("");
   };
-
   return (
-    <div className="addList-div">
+    <div className="add-div">
       <div className="add-input-div">
-        <div className="title-input">
+        <div className="input-div">
           <label htmlFor="title" className="label-text">
             제목
           </label>
@@ -66,16 +65,29 @@ const TodoAdd = ({ setList, list }) => {
             maxLength={10}
           />
         </div>
-        <div className="content-input">
+        <div className="input-div">
           <label htmlFor="content" className="label-text">
             내용
           </label>
           <input
             value={content}
+            ref={contentEl}
             onChange={addContent}
             className="todo-input"
             id="content"
             placeholder="내용을 입력하세요"
+          />
+        </div>
+        <div className="input-div">
+          <label htmlFor="deadline" className="label-text">
+            마감일
+          </label>
+          <input
+            type="date"
+            className="deadline-input"
+            value={deadline}
+            ref={deadlineEl}
+            onChange={addDeadline}
           />
         </div>
       </div>

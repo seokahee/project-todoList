@@ -5,7 +5,7 @@ const TodoItem = function ({ item, removeBtn, completedBtn }) {
       <div className="todo-content-div">
         <div className="title-div">{item.title}</div>
         <div className="content-div"> {item.content}</div>
-        <div className="regDate-div"> 등록일 {item.regDate}</div>
+        <div className="deadline-div"> {item.deadline}</div>
         <div className="buttons-div">
           <button
             onClick={() => removeBtn(item.id, item.title)}
