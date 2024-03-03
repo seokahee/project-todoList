@@ -1,3 +1,4 @@
+import { findAllByAltText } from "@testing-library/react";
 import TodoItem from "./TodoItem";
 
 const TodoList = ({ list, setList }) => {
