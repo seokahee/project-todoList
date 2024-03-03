@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# 투두리스트 만들기
+React로 간단한 CRUD를 만들어보자!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 개발 기간 : 2024. 01.18 ~ 2024.01.22
 
-## Available Scripts
+### 개발 환경
+- editor : Visual Studio Code
+- environment : git, github
+- development : JavascriptES6, react18.2.0, CSS3, HTML5
 
-In the project directory, you can run:
+## 필수 요구 사항
 
-### `npm start`
+ UI 구현하기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ Todo 추가 하기
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ Todo 삭제 하기
 
-### `npm test`
+ Todo 완료 상태 변경하기 (완료 ↔ 진행중)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 제목과 내용을 입력하고, [추가하기] 버튼을 클릭하면 Working에 새로운 Todo가 추가되고 제목 input과 내용 input은 다시 빈 값으로 바뀌도록 구성해주세요.
 
-### `npm run build`
+ Todo의 isDone 상태가 true이면, 상태 버튼의 라벨을 취소, isDone이 false 이면 라벨을 완료 로 조건부 렌더링 해주세요.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Todo의 상태가 Working 이면 위쪽에 위치하고, Done이면 아래쪽에 위치하도록 구현합니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ Layout의 최대 넓이는 1200px, 최소 넓이는 800px로 제한하고, 전체 화면의 가운데로 정렬해주세요.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ 컴포넌트 구조는 자유롭게 구현해보세요.
 
-### `npm run eject`
+반복되는 컴포넌트를 찾아서, 직접 컴포넌트를 분리해보시고, 분리한 컴포넌트를 README에 작성합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+선택 사항
+ todo수정 기능 (Update)
+ 추가 기능 form 유효성 검사
+ css - grid, flex
+ 현재 시간 추가
+ 버튼 및 todo영역 템플릿 만들기
+ 페이지 로드 및 todo 추가 후 제목에 포커스
